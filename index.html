@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+
+    <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <h1>Title</h1>
+
+    <form id="load_async">
+      <input type="submit" value="Show!">
+    </form>
+
+    <div id="form_placeholder" style="background-color: red; padding: 10px;">
+      <!-- Here comes the form! -->
+    </div>
+
+    <span id="result"></span>
+
+    <script charset="utf-8">
+      $("#load_async").submit(function(event) {
+        $.get("_form.html", function(data) {
+          $("#form_placeholder").html(data);
+          $("#form_placeholder").show();
+        })
+
+        event.preventDefault();
+      });
+    </script>
+
+    <script charset="utf-8">
+      $(function() {
+        // $("#form_placeholder").hide();
+      });
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,14 @@
+<form>
+  <div style="background-color: green; padding: 10px;">
+
+    <input id="foo" type="text" value="17,4.568">
+    <script charset="utf-8">
+      $("#foo").inputmask("decimal", { radixPoint: ".", digits: 2 });
+    </script>
+
+    <input id="bar" type="text" value="17,4.568">
+    <script charset="utf-8">
+      $("#bar").inputmask("decimal", { radixPoint: ",", digits: 3 });
+    </script>
+  </div>
+</form>
